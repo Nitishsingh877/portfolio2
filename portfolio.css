@@ -1,0 +1,231 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.wrapper {
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.container {
+    width: 1200px;
+    margin: 0 auto;
+}
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 1rem;
+}
+.logo {
+    width: 80px;
+}
+.logo-container {
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+.logo-text {
+    margin-left: -1.2rem;
+    font-size: 28px;
+}
+.nav-items {
+    display: flex;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+.nav-items div {
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.nav-items div:hover {
+    transition: 0.8s;
+    font-weight: 525;
+}
+.hero-section{
+    position: relative;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+
+    gap: 5rem;
+    margin: 4rem auto;
+    margin-left: 10%;
+    padding: 0 1rem;
+    padding-bottom: 8rem;
+}
+.faded-text {
+    user-select: none;
+    font-size: 7em;
+    color: rgb(231,231,231);
+    font-weight: bold;
+    transition: all 3s;
+   margin-top: -15%;
+   margin-left: 10%;
+}
+.hero-section-left {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    gap: 2rem;
+}
+.hero-section-heading {
+    font-size: 35px;
+    font-weight: 500;
+    color: #343d68;
+}
+.role {
+    color: #4e45d5;
+    font-weight: 800;
+}
+.hero-section-subheading {
+    font-size: 45px;
+    line-height: 45px;
+}
+.hero-section-desc {
+    margin-top: 1rem;
+    width: 70%;
+    font-weight: 600;
+}
+.btn {
+    width: 150px;
+    height: 40px;
+    background-color: rgb(205, 48, 48);
+    border: 5px solid red;
+    color: white;
+    border-style: none;
+    font-size: 14px;
+    font-weight: 500;
+     
+}
+.btn:hover {
+    color: black;
+    background-color: #fff;
+    border: 2px solid red;
+    transition-duration: 2s;
+    transition-timing-function: ease;
+    font-weight: 700;
+    font-size: 20px;
+}
+.hero-section-right {
+    position: relative;
+    margin-right: 10%;
+}
+.absolute {
+    position: absolute;
+}
+.user-image {
+    padding: 2.5rem;
+    filter: grayscale(1);
+    transition: all 1s;
+    animation: scaleimage 5s linear infinite;
+}
+
+.user-image img {
+    z-index: -9;
+}
+@keyframes scaleimage {
+    0% {
+        filter: grayscale(0);
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        filter: grayscale(1);
+        box-shadow: 3px 3px 10px black;
+    }
+    100% {
+        transform: scale(0.9);
+        filter: grayscale(0);
+    }
+}
+.icon-dots {
+    z-index: 9;
+    bottom: -1rem;
+    right: 0;
+    animation-name: dotsanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes dotsanimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+.icon-cube {
+    z-index: 9;
+    right: 1em;
+    top: -0.8em;
+    
+    animation-name: cubeanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes cubeanimation {
+    0% {
+        transform: rotateY(0deg) translateY(0);
+    }
+    50% {
+        transform: rotateY(180deg) translateY(-12px) ;
+    }
+    100% {
+        transform: rotateY(360deg) translateY(0px);
+    }
+}
+.icon-circle {
+    z-index: 9;
+    left: 0;
+    bottom:0;
+    animation-name: circleanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes  circleanimation {
+   
+    50% {
+        left: 5%;
+        bottom: 10%;
+    }
+   
+}
+.icon-zigzags {
+
+    z-index: 9;
+    top: 1.5em;
+    left: -0.3em;
+    animation-name: zigzageanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+@keyframes  zigzageanimation {
+   
+    50% {
+        left: 5%;
+        top: 2%;
+    }
+    
+}
+
+.icon-plus {
+    z-index: 9;
+    top: 0em;
+    left: 10rem;
+    animation-name: plusanimation;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}

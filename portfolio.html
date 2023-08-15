@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- css link -->
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+<body>
+     <div class="wrapper">
+
+        <div class="container">
+            <div class="navbar">
+                <div class="logo-container">
+                    <img src="NavLogo.jpg" alt="nav-logo" class="logo">
+                    <div class="logo-text">ai Ho!</div>
+                </div>
+                <div class="nav-items">
+                    <div><a href="">Projects</a></div>
+                    <div><a href="">Skills</a></div>
+                    <div><a href="">Contact Me</a></div>
+                </div>
+            </div>
+        </div>
+
+     <div class="hero-section">
+         <div class="hero-section-left">
+            <div class="hero-section-heading">Hi! Nitish Singh</div>
+            <div class=" hero-section-heading hero-section-subheading">
+                I am a <span class="role">web Developer</span>
+            </div>
+            <div class="hero-section-desc">
+                I'm a software developer and here is my portfolio website.Here you'll learn about my journey as a software developer.
+            </div>
+            <div class="btn-pink">
+                <button class="btn">Hire me</button>
+            </div>
+         </div>
+    <div class="hero-section-right">
+        <div class="absolute icons icon-dots">
+            <img src="dots.png" alt="">
+        </div>
+        <div class="absolute icons icon-cube">
+            <img src="cube.png" alt="">
+        </div>
+        <div class="absolute icons icon-circle">
+            <img src="circle.png" alt="">
+        </div>
+        <div class="absolute icons icon-zigzags">
+            <img src="zigzags.png" alt="">
+        </div>
+        <div class="absolute icons icon-plus">
+            <img src="plus.png" alt="">
+        </div>
+        <div class="user-image">
+            <img src="IMG_1125.JPG" width="300px" alt="">
+        </div>
+    </div>
+</div>
+    <div class="faded-text">Nitish Singh</div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+<script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function (event) {
+      // array with texts to type in typewriter
+      var dataText = [
+        "Full Stack Developer.",
+        "Web Developer.",
+        "UI-UX Designer.",
+        "Backend Developer.",
+        "Coder.",
+      ];
+
+      // type one text in the typwriter
+      // keeps calling itself until the text is finished
+      function typeWriter(text, i, fnCallback) {
+        // chekc if text isn't finished yet
+        if (i < text.length) {
+          // add next character to h1
+          document.querySelector(".role").innerHTML =
+            text.substring(0, i + 1) + '<span aria-hidden="true"></span>';
+
+          // wait for a while and call this function again for next character
+          setTimeout(function () {
+            typeWriter(text, i + 1, fnCallback);
+          }, 100);
+        }
+        // text finished, call callback if there is a callback function
+        else if (typeof fnCallback == "function") {
+          // call callback after timeout
+          setTimeout(fnCallback, 700);
+        }
+      }
+      // start a typewriter animation for a text in the dataText array
+      function StartTextAnimation(i) {
+        if (typeof dataText[i] == "undefined") {
+          setTimeout(function () {
+            StartTextAnimation(0);
+          }, 20000);
+        }
+        // check if dataText[i] exists
+        if (i < dataText[i].length) {
+          // text exists! start typewriter animation
+          typeWriter(dataText[i], 0, function () {
+            // after callback (and whole text has been animated), start next text
+            StartTextAnimation(i + 1);
+          });
+        }
+      }
+      // start the text animation
+      StartTextAnimation(0);
+    });
+  </script>
+<script>
+    var typeData = new Typed(".role", {
+      strings: [
+        "Full Stack Developer",
+        "Web Developer",
+        "UI-UX Designer",
+        "Backend Developer",
+        "Coder",
+      ],
+      loop: true,
+      typeSpeed: 100,
+      backSpeed: 80,
+      backDelay: 1000,
+    });
+  </script>
+</body>
+</html>
